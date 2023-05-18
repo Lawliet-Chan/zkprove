@@ -6,8 +6,8 @@ use zkevm::utils::{load_params, load_seed};
 use zkevm::{circuit::DEGREE, prover::Prover};
 
 fn main() {
-    let traces_vec = fs::read("./multiple.json").unwrap();
-    let traces = serde_json::from_slice::<Vec<BlockTrace>>(&traces_vec).unwrap();
+    let traces_str = fs::read_to_string("./multiple.json").unwrap();
+    let traces = serde_json::from_str::<Vec<BlockTrace>>(&traces_str).unwrap();
 
     let params = load_params("./test_params", *DEGREE, SerdeFormat::RawBytesUnchecked).unwrap();
     let agg_params = load_params("./test_params", *AGG_DEGREE, SerdeFormat::RawBytesUnchecked).unwrap();
