@@ -14,6 +14,6 @@ fn main() {
     let seed = load_seed("./test_seed").unwrap();
     let mut p = Prover::from_params_and_seed(params, agg_params, seed);
     let _ = p
-        .create_agg_circuit_proof_batch(&[traces])
+        .create_agg_circuit_proof_batch(&[trace])
         .unwrap();
 }
