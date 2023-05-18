@@ -7,6 +7,8 @@ use zkevm::utils::{load_params, load_seed};
 use zkevm::{circuit::DEGREE, prover::Prover};
 
 fn main() {
+    env_logger::init();
+
     let traces_vec = fs::read("./multiple.json").unwrap();
     let trace = serde_json::from_slice::<BlockTrace>(&traces_vec).unwrap();
 
