@@ -1,6 +1,5 @@
 use std::fs;
 use halo2_proofs::SerdeFormat;
-use std::ptr::null;
 use types::eth::BlockTrace;
 use zkevm::circuit::AGG_DEGREE;
 use zkevm::utils::{load_params, load_seed};
